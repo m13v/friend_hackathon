@@ -2,3 +2,4 @@ __pycache__/
 .python-version
 .env
 .DS_Store
+mem0/
