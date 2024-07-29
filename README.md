@@ -12,7 +12,11 @@ https://partiful.com/e/AzVSvX4VB2cwWs52I0FW
 
 
 The repo contains multiple scripts that do not as a coherent independent application, but it still runs:
-Get started:
+
+##Get started:
+
+0. Export your OPENAI_API_KEY to os environment
+
 1. Start ngrok endpoint:
 ```bash
 ngrok http 8080 
