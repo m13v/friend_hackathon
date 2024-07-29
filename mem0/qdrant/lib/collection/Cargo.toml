@@ -1,0 +1,98 @@
+[package]
+name = "collection"
+version = "0.4.2"
+authors = [
+    "Andrey Vasnetsov <vasnetsov93@gmail.com>",
+    "Qdrant Team <info@qdrant.tech>",
+]
+license = "Apache-2.0"
+edition = "2021"
+
+[features]
+testing = []
+tracing = ["dep:tracing", "api/tracing", "segment/tracing"]
+data-consistency-check = []
+
+[dev-dependencies]
+criterion = "0.5"
+proptest = "1.5.0"
+rstest = "0.21.0"
+approx = "0.5.1"
+collection = { path = ".", features = ["testing"] }
+common = { path = "../common/common", features = ["testing"] }
+segment = { path = "../segment", features = ["testing"] }
+
+[target.'cfg(not(target_os = "windows"))'.dev-dependencies]
+pprof = { workspace = true }
+
+[dependencies]
+parking_lot = { workspace = true }
+
+rand = { workspace = true }
+thiserror = "1.0"
+serde = { workspace = true }
+serde_cbor = { workspace = true }
+serde_json = { workspace = true }
+rmp-serde = "~1.3"
+wal = { workspace = true }
+ordered-float = "4.2"
+hashring = "0.3.5"
+tinyvec = { version = "1.8.0", features = ["alloc"] }
+bitvec = "1.0.1"
+lazy_static = "1.5.0"
+smallvec = "1.13.2"
+
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+futures = { workspace = true }
+atomicwrites = "0.4.3"
+log = { workspace = true }
+env_logger = "0.11"
+merge = "0.1.0"
+async-trait = "0.1.81"
+arc-swap = "1.7.1"
+tonic = { workspace = true }
+uuid = { workspace = true }
+url = { version = "2", features = ["serde"] }
+validator = { workspace = true }
+actix-web-validator = "5.0.1"
+actix-web = {version = "4.8.0"}
+actix-files = "0.6.6"
+
+common = { path = "../common/common" }
+cancel = { path = "../common/cancel" }
+io = { path = "../common/io" }
+issues = { path = "../common/issues" }
+segment = { path = "../segment" }
+sparse = { path = "../sparse" }
+api = { path = "../api" }
+
+itertools = { workspace = true }
+indicatif = { workspace = true }
+chrono = { workspace = true }
+schemars = { workspace = true }
+tar = { workspace = true }
+fs_extra = "1.3.0"
+semver = { workspace = true }
+tempfile = { workspace = true }
+sha2 = "0.10.8"
+bytes = "1.6.0"
+fnv = { workspace = true }
+indexmap = { workspace = true }
+ringbuffer = "0.15.0"
+strum = { workspace = true }
+
+tracing = { workspace = true, optional = true }
+fs4 = "0.8.4"
+
+# AWS S3 support
+object_store = { version = "0.10.1" , features = ["aws"] }
+
+
+[[bench]]
+name = "hash_ring_bench"
+harness = false
+
+[[bench]]
+name = "batch_search_bench"
+harness = false
