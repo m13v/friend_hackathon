@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/44d5baa6-98d8-4f85-a1db-d4075fc36feb
 This was a two day hackathon at AGI House SF on July 28, 2024
 https://partiful.com/e/AzVSvX4VB2cwWs52I0FW
 
-# What is does
+# What it does
 1. It takes images from Openglass, finds faces in the local db, so that it knows who you are talking to.
 2. It has an audio deepgram assistant that listens to your key phrases "Hey Friend" to trigger query to DB using mem0, and read back to you its contents
 * These two pieces should be linked together into a proper flow, but I didn't have time to do it
