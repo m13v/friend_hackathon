@@ -24,7 +24,7 @@ def compare_faces(image_path1, image_path2):
         return "The image contains the face of Nik Shevchenko"
     else:
         return "The images are of different people."
-gi
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 3:
